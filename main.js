@@ -2,8 +2,10 @@ const app = {
   data: [], // Placeholder for your item data
 
   init() {
-    // Load the item database and store it in the 'data' property
-    // ...
+  // Load the item database and store it in the 'data' property
+  getDatabaseRef().on('value', (snapshot) => {
+    this.data = snapshot.val() || [];
+  });
 
     // Add an event listener for the search input
     document.getElementById("search-input").addEventListener("input", this.searchItems);
@@ -28,8 +30,10 @@ const app = {
     // Add the new item to the data array
     this.data.push(newItem);
 
-    // Save the updated data to the database (JSON file, Firebase, etc.)
-    // ...
+  // Add the new item to the Firebase Realtime Database
+  const newItemRef = getDatabaseRef().push();
+  newItem.id = newItemRef.key;
+  newItemRef.set(newItem);
 
     // Reset the form
     event.target.reset();
@@ -91,5 +95,9 @@ const app = {
     todoList.appendChild(todoItem);
   },
 };
+
+function getDatabaseRef() {
+  return firebase.database().ref('items');
+}
 
 app.init();
