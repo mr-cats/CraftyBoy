@@ -1,4 +1,6 @@
-const eleven = 11;
+
+const firebase = initializeApp(firebaseConfig);
+const analytics = getAnalytics(firebase); 
 
 const app = {
   data: [], // Placeholder for your item data
