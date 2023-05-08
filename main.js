@@ -1,5 +1,3 @@
-const twelve = 12;
-
 const app = {
   data: [], // Placeholder for your item data
 
