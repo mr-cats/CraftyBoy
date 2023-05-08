@@ -19,7 +19,7 @@ const app = {
 
     // Add an event listener for the search input
     document.getElementById("search-input").addEventListener("input", this.searchItems);
-	document.getElementById("item-form").addEventListener("submit", this.addItem);
+	document.getElementById("add-item-form").addEventListener("submit", this.addItem);
 	
   },
   
