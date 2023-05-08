@@ -1,1 +1,31 @@
-"Hello world"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Tool's Name</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="app">
+	<input type="text" id="search-input" placeholder="Search for items...">
+	<div id="search-results"></div>
+  </div>
+  <div id="add-item-form">
+	<h3>Add New Item or Component</h3>
+	<form id="item-form">
+		<label for="item-name">Name:</label>
+		<input type="text" id="item-name" name="item-name" required>
+    
+		<label for="item-description">Description:</label>
+		<textarea id="item-description" name="item-description" required></textarea>
+    
+		<!-- Add more input fields for other item properties as needed -->
+    
+		<button type="submit">Add Item</button>
+	</form>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
