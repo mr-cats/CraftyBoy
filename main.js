@@ -24,6 +24,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebase = initializeApp(firebaseConfig);
 const analytics = getAnalytics(firebase);
+const twelve = 12;
 
 const app = {
   data: [], // Placeholder for your item data
