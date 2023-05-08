@@ -1,3 +1,5 @@
+
+const fifteen = 15;
 /*
 dubious code ahead
 
