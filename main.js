@@ -24,30 +24,42 @@ const app = {
   },
   
   addItem(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    // Get the input values from the form
-    const itemName = document.getElementById("item-name").value.trim();
-    const itemDescription = document.getElementById("item-description").value.trim();
+  // Get the input values
+  const itemName = document.getElementById("item-name").value;
+  const itemDescription = document.getElementById("item-description").value;
+  const itemComponents = document.getElementById("item-components").value;
 
-    // Create a new item object
-    const newItem = {
-      name: itemName,
-      description: itemDescription,
-      // Add other item properties as needed
-    };
+  // Validate the input values
+  if (!itemName || !itemDescription || !itemComponents) {
+    alert("Please fill in all the fields.");
+    return;
+  }
 
-    // Add the new item to the data array
-    this.data.push(newItem);
+  // Parse the components input into an array of objects
+  const componentsArray = itemComponents.split(',').map((component) => {
+    const [name, quantity] = component.split(':');
+    return { name: name.trim(), quantity: parseInt(quantity, 10) };
+  });
+
+  // Create a new item object
+  const newItem = {
+    name: itemName,
+    description: itemDescription,
+    components: componentsArray,
+  };
 
   // Add the new item to the Firebase Realtime Database
   const newItemRef = getDatabaseRef().push();
   newItem.id = newItemRef.key;
   newItemRef.set(newItem);
 
-    // Reset the form
-    event.target.reset();
-  },
+  // Clear the input fields
+  document.getElementById("item-name").value = "";
+  document.getElementById("item-description").value = "";
+  document.getElementById("item-components").value = "";
+},
 
 
   searchItems(event) {
