@@ -1,3 +1,5 @@
+const eleven = 11;
+
 const app = {
   data: [], // Placeholder for your item data
 
