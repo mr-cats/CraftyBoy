@@ -11,20 +11,22 @@
 	<input type="text" id="search-input" placeholder="Search for items...">
 	<div id="search-results"></div>
   </div>
-  <div id="add-item-form">
-	<h3>Add New Item or Component</h3>
-	<form id="item-form">
-		<label for="item-name">Name:</label>
-		<input type="text" id="item-name" name="item-name" required>
-    
-		<label for="item-description">Description:</label>
-		<textarea id="item-description" name="item-description" required></textarea>
-    
-		<!-- Add more input fields for other item properties as needed -->
-    
-		<button type="submit">Add Item</button>
-	</form>
+  <div class="add-item-form">
+  <h2>Add Item</h2>
+  <form id="add-item-form" onsubmit="app.addItem(event)">
+    <label for="item-name">Item Name:</label>
+    <input type="text" id="item-name" required />
+
+    <label for="item-description">Item Description:</label>
+    <input type="text" id="item-description" required />
+
+    <label for="item-components">Components:</label>
+    <input type="text" id="item-components" placeholder="component:quantity, component:quantity, ..." required />
+
+    <button type="submit">Add Item</button>
+  </form>
   </div>
+
   
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
