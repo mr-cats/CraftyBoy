@@ -34,7 +34,6 @@ const app = {
   // Validate the input values
   if (!itemName || !itemDescription || !itemComponents) {
     alert("Please fill in all the fields.");
-    return;
   }
 
   // Parse the components input into an array of objects
@@ -49,6 +48,7 @@ const app = {
     description: itemDescription,
     components: componentsArray,
   };
+  console.log(newItem);
 
   // Add the new item to the Firebase Realtime Database
   const newItemRef = getDatabaseRef().push();
