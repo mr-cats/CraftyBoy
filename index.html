@@ -25,7 +25,24 @@
 		<button type="submit">Add Item</button>
 	</form>
   </div>
-  <script src="firebase.js" type="module"></script>
+  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyADEPOqOJakXNUm4w8yg8WtEXVyksa6c10",
+      authDomain: "craftyboy.firebaseapp.com",
+      projectId: "craftyboy",
+      storageBucket: "craftyboy.appspot.com",
+      messagingSenderId: "209188326491",
+      appId: "1:209188326491:web:1512bd45b3aa933b7d837e",
+      measurementId: "G-PP690DRTQY"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
   <script src="main.js"></script>
 </body>
 </html>

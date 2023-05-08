@@ -1,6 +1,10 @@
+/*
+dubious code ahead
 
-const firebase = initializeApp(firebaseConfig);
-const analytics = getAnalytics(firebase); 
+  *  *
+ \____/
+
+*/
 
 const app = {
   data: [], // Placeholder for your item data
